@@ -10,6 +10,7 @@ const Post = ({ title, author, path, date, body}) => {
                     <Link to={path}>{title}</Link>
                 </CardTitle>
                 <CardSubtitle>
+                    <span className="date-display">{date}</span>
                     <span className="text-info">{date}</span> by {' '}
                     <span className="text-info">{author}</span>
                 </CardSubtitle>
