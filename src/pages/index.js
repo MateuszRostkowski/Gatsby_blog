@@ -5,43 +5,33 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql, StaticQuery } from "gatsby"
 import Post from "../components/Post"
-import { Row, Col } from "reactstrap"
-import Sidebar from "../components/Sidebar.js"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout pageTitle="Javascript">
     <SEO title="Home" />
-    <h1>Home page</h1>
-    <Row>
-      <Col md="8">
-        <StaticQuery
-          query={indexQuery}
-          render={data => {
-            return (
-              <div>
-                {data.allMarkdownRemark.edges.map(({ node }) => {
-                  return (
-                    <Post
-                      key={node.id}
-                      title={node.frontmatter.title}
-                      author={node.frontmatter.author}
-                      slug={node.fields.path}
-                      date={node.frontmatter.date}
-                      body={node.excerpt}
-                      fluid={node.frontmatter.image.childImageSharp.fluid}
-                      tags={node.frontmatter.tags}
-                    />
-                  )
-                })}
-              </div>
-            )
-          }}
-        />
-      </Col>
-      <Col md="4">
-        <Sidebar />
-      </Col>
-    </Row>
+    <StaticQuery
+      query={indexQuery}
+      render={data => {
+        return (
+          <div>
+            {data.allMarkdownRemark.edges.map(({ node }) => {
+              return (
+                <Post
+                  key={node.id}
+                  title={node.frontmatter.title}
+                  author={node.frontmatter.author}
+                  slug={node.fields.slug}
+                  date={node.frontmatter.date}
+                  body={node.excerpt}
+                  fluid={node.frontmatter.image.childImageSharp.fluid}
+                  tags={node.frontmatter.tags}
+                />
+              )
+            })}
+          </div>
+        )
+      }}
+    />
   </Layout>
 )
 
@@ -64,7 +54,7 @@ const indexQuery = graphql`
             }
             tags
           }
-          fields{
+          fields {
             slug
           }
           excerpt
