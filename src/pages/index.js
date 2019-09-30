@@ -3,9 +3,10 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, StaticQuery } from "gatsby"
 import Post from "../components/Post"
-import { Row, Col } from 'reactstrap'
+import { Row, Col } from "reactstrap"
+import Sidebar from "../components/Sidebar.js"
 
 const IndexPage = () => (
   <Layout>
@@ -13,14 +14,15 @@ const IndexPage = () => (
     <h1>Home page</h1>
     <Row>
       <Col md="8">
-        <StaticQuery 
-          query={indexQuery} 
+        <StaticQuery
+          query={indexQuery}
           render={data => {
             return (
               <div>
                 {data.allMarkdownRemark.edges.map(({ node }) => {
                   return (
-                    <Post 
+                    <Post
+                      key={node.id}
                       title={node.frontmatter.title}
                       author={node.frontmatter.author}
                       path={node.frontmatter.path}
@@ -29,34 +31,34 @@ const IndexPage = () => (
                       fluid={node.frontmatter.image.childImageSharp.fluid}
                       tags={node.frontmatter.tags}
                     />
-                  )              
+                  )
                 })}
               </div>
             )
-          }} 
+          }}
         />
       </Col>
       <Col md="4">
-        <div style={{width: "100%", height: "100%", backgroundColor: "gray"}}></div>
+        <Sidebar />
       </Col>
-    </Row> 
+    </Row>
   </Layout>
 )
 
 const indexQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }){
-      edges{
-        node{
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
           id
-          frontmatter{
+          frontmatter {
             title
             date(formatString: "MMM Do YYYY [at] HH:mm")
             author
             path
-            image{
-              childImageSharp{
-                fluid(maxWidth: 600){
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid
                 }
               }
