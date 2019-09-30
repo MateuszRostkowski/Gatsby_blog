@@ -4,6 +4,9 @@ date: 2019-09-29 21:00:00
 author: 'Mateusz Rostkowski'
 path: '/first-post'
 image: ../../images/javascript-code.jpg
+tags:
+- code
+- About-me
 ---
 
 # Title
