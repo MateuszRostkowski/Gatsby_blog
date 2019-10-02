@@ -1,6 +1,6 @@
 ---
 title: 'Fourth Post - Javascript Objects'
-date: 2019-09-29 22:59:00
+date: 2019-02-10 14:49:00
 author: 'Jan Kowalski'
 image: ../../images/javascript-code-3.jpg
 tags:
