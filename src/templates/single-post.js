@@ -38,10 +38,10 @@ const SinglePost = ({ data, pageContext }) => {
           <span className="text-info">{post.author}</span>
         </CardBody>
         <div
-          className="ml-4 mr-4 text-justify"
+          className="ml-4 mr-4 text-justify single-post"
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
-        <ul className="post-tags">
+        <ul className="post-tags ml-4">
           {post.tags.map(tag => (
             <li key={tag}>
               <Link to={`/tag/${slugify(tag)}`}>

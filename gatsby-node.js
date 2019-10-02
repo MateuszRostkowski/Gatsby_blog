@@ -89,7 +89,7 @@ exports.createPages = ({ actions, graphql }) => {
 
         // Create tags page
         createPage({
-            path: `/tags`,
+            path: `/tagi`,
             component: templates.tagsPage,
             context: {
                 tags,
@@ -108,7 +108,7 @@ exports.createPages = ({ actions, graphql }) => {
             })
         })
 
-        const postPerPage = 2
+        const postPerPage = 6
         const numberOfPages = Math.ceil(posts.length / postPerPage)
 
         Array.from({ length: numberOfPages}).forEach((_, index) => {

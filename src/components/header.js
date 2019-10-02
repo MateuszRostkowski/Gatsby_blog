@@ -37,10 +37,10 @@ class Header extends React.Component{
                   <NavLink href="/team">Team</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/tags">Tags</NavLink>
+                  <NavLink href="/tagi">Tagi</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/about">About</NavLink>
+                  <NavLink href="/o-mnie">O mnie</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

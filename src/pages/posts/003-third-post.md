@@ -1,12 +1,13 @@
 ---
-title: 'Third Post - Javascript CheatSheet'
-date: 2019-09-29 22:59:00
+title: 'Third post'
+date: 2019-10-03 12:30:00
 author: 'Mateusz Rostkowski'
-image: ../../images/javascript-code-3.jpg
+image: ../../images/javascript-code.jpg
 tags:
 - code
-- Fundamentals
-- Javascript
+- About-me
 ---
 
-Today i'm gonna show you quick javascript cheatsheet. Today i'm gonna show you quick javascript cheatsheet. Today i'm gonna show you quick javascript cheatsheet. Today i'm gonna show you quick javascript cheatsheet. Today i'm gonna show you quick javascript cheatsheet. Today i'm gonna show you quick javascript cheatsheet.
+
+### Spis treści
+
