@@ -2,7 +2,7 @@
 
 
 
-1. **Installation**
+## **Installation**
     1. Clone/Download the code from this repository
     ```bash
     git clone https://github.com/MateuszRostkowski/Gatsby_blog.git
@@ -28,14 +28,14 @@
 
     The blog is now running at http://localhost:8000!
 
-2.  **Tools used**
+##  **Tools used**
     * Gatsby CLI - version: 2.7.53
     * Gatsby - version: 2.15.28
     * Npm - version 6.9.0
     * React
     * Sass
     
-3. **Plugin used**
+## **Plugin used**
     * gatsby-plugin-sass
     * gatsby-plugin-catch-links
     * gatsby-transformer-sharp
