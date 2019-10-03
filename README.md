@@ -3,30 +3,33 @@
 
 
 ## **Installation**
-    1. Clone/Download the code from this repository
-    ```bash
-    git clone https://github.com/MateuszRostkowski/Gatsby_blog.git
-    ```
+    
+1. Clone/Download the code from this repository
 
-    2. Install dependencies 
-    ```bash
-    cd Gatsby_blog
-    npm install
-    ```
+```bash
+git clone https://github.com/MateuszRostkowski/Gatsby_blog.git
+```
 
-    or 
+2. Install dependencies 
+    
+```bash
+cd Gatsby_blog
+npm install
+```
 
-    ```bash
-    cd Gatsby_blog
-    yarn install
-    ```
+or 
 
-    3. 🚀 **Launch Project**
-    ```bash
-    gastby develop
-    ```
+```bash
+cd Gatsby_blog
+yarn install
+```
+3. 🚀 **Launch Project**
+    
+```bash
+gastby develop
+```
 
-    The blog is now running at http://localhost:8000!
+  The blog is now running at http://localhost:8000!
 
 ##  **Tools used**
     * Gatsby CLI - version: 2.7.53
