@@ -38,7 +38,7 @@ gastby develop
     * React
     * Sass
     
-## **Plugin used**
+## **Plugins used**
     * gatsby-plugin-sass
     * gatsby-plugin-catch-links
     * gatsby-transformer-sharp
