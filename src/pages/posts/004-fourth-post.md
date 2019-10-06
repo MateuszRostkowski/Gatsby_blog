@@ -2,21 +2,25 @@
 title: 'ES6 różnice między starszą wersją'
 date: 2019-10-04 18:55:00
 author: 'Mateusz Rostkowski'
-image: ../../images/javascript-code.jpg
+image: ../../images/javascript-code-3.jpg
 tags:
 - javascript
 - javascript-podstawy
+- ES6
 ---
 
 
 ## Spis treści
 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. [Zmienne](#zmienne)
+2. [Łączenie strigów](#łączenie-stringów)
+3. [Object literals](#object-literals)
+4. [Dekonstrukcja obiektów](#dekonstrukcja-obiektów)
+5. [Funkcje strzałkowe](#funkcje-strzałkowe)
+6. [Domyślne parametry](#domyślne-parametry)
+7. [Array functions](#array-functions)
+8. [Constructor functions](#constructor-functions)
+9. [Promises](#promises)
 
 ---
 ## Zmienne
@@ -174,7 +178,6 @@ const sayHi = name => console.log(`Hello ${name}! How are you?`)
 
 sayHi("mat")
 ```
-## 
 
 #### Stary javascrip
 ```javascript
@@ -262,15 +265,13 @@ const add = (c = 1, d = 1) => {
 add(20, 50) // 70
 add() // 2
 ```
-
+---
 ## Array functions 
 
-#### ES6
+##### forEach
 ```javascript
 const shoppingList = ['Milk', 'Cows', 'Eggs' 'Bannana', 'Choco'];
 ```
-
-##### forEach
 ```javascript
 shoppingList.forEach((product) => {         // metoda ta działa bardzo podobnie do pętli for
     console.log(product + " need")
@@ -293,10 +294,11 @@ shoppingList.forEach((product, index) => {
 // The index is 4 and the product is Choco
 ```
 
+
+##### Map
 ```javascript
 const shoppingList = ['Milk', 'Cows', 'Eggs', 'Bannana', 'Choco'];
 ```
-##### Map
 ```javascript
 const newList = shoppingList.map(item => {      // metoda map edytuje tablice
     return item + ' need';                       // każdy element tablicy zostanie zmieniony "element + ' new' "
@@ -308,6 +310,9 @@ console.log(newList); // [ 'Milk need', 'Cows need', 'Eggs need', 'Bannana need'
 ```
 
 ##### Filter
+```javascript
+const shoppingList = ['Milk', 'Cows', 'Eggs' 'Bannana', 'Choco'];
+```
 ```javascript
 const filterList = shoppingList.filter(item => {    // metoda filter filtruje tablice
     return item === 'Eggs';                         // zwraca każdy element tablicy który zwróci "true" w danym wyrażeniu
@@ -325,26 +330,101 @@ console.log(notEggs) // ['Milk', 'Cows', 'Bannana', 'Choco']
 ```javascript
 function Person(name, age, hairColor) {         // Konstruktor zazwyczaj zaczynany jest z dużej litery, żeby podkreślić że to jest właśnie to :)
     this.name = name;
+    this.age = age;
+    this.hairColor = hairColor;
 }
+
+Person.prototype.sayName = function(){
+    console.log("My name is " + this.name);
+}
+
+var mat = new Person('Mat', 25, 'Blonde')
+
+console.log(mat)        // { name: 'Mat', age: 25, hairColor: 'blonde' }
+Mat.sayName;            // My name is Mat
+
+function Matt(ocupation, hobbys, name, age, hairColor){
+    Person.call(this, name, age, hairColor);
+    this.ocupation = ocupation;
+    this.hobbys = hobbys;
+}
+
+Matt.prototype = Object.create(Person.prototype)
+
+const person = new Matt('junior dev', 'programming', 'Mat', 25, 'blonde')
+
+console.log(person)    // Mat { ocupation: 'junior dev', hobbys: 'programming', name: 'Mat', age: 25, hairColor: 'blonde' }
+person.sayName();      // My name is Mat
 ```
 
-#### 
+#### ES6
+
+```javascript
+class ShoppingList {
+    constructor(items, number) {
+        this.items = items;
+        this.number = number;
+    }
+    sayList(){
+        console.log(this.items);
+    }
+}
+
+const myList = new ShoppingList(['Milk, Choco, Redbull'], 3)
+
+console.log(myList)     // ShoppingList { items: [ 'Milk, Choco, Redbull' ], number: 3}
+myList.sayList()        // [ 'Milk, Choco, Redbull' ]
+
+class Product extends ShoppingList{
+    constructor(ammount, cost, items, number){
+        super(items, number);
+        this.ammount = ammount;
+        this.cost = cost;
+    }
+}
+
+const product = new Product(['Redbull, Chocolate, Candy'], 3, 2, 20);
+
+console.log(product);   // Product { items: ['Redbull, Chocolate, Candy'], nr: 3, ammount: 2, cost: 20 }
+product.sayList();      // ['Redbull, Chocolate, Candy']
+```
+---
+## Promises
+
+#### Stary Javascript
 
 ```javascript
 
+console.log('start')            // wyświetla się od razu po odpaleniu
+
+function getData(data, callback){
+    setTimeout(() => {
+        console.log('reading from the database');
+        callback({data: data})
+    }, 2000);
+}
+
+getData(5, function(data){
+    console.log(data);          // po 2 sekundach 'reading from the database' \n { data: 5 }
+})
+
+console.log('finish')           // wyświetla się od razu po odpaleniu
 ```
-#### 
+#### ES6
 
 ```javascript
+const prom = new Promise((resolve, reject) => {
+    // Kod asynchroniczny
+    setTimeout( () => {
+        resolve({ user: 'mat', pass: '6125512a236t3' });
+        reject(new Error('something went wrong'))
+    }, 2000)
+})
 
-```
-#### 
-
-```javascript
-
-```
-#### 
-
-```javascript
-
+prom.then(data => {
+    console.log(data)           // po 2 sekundach { user: 'mat', pass: '6125512a236t3' }
+})
+.catch(err => {
+    console.log(err);           // gdy wystąpi jakiś error wyświetli się 'something went wrong'
+})
 ```
