@@ -29,6 +29,7 @@ tags:
 15. [reduce](#reduce) - iteruje po całej tablicy kumulując wartości do jednej zmiennej (przydatne do sumy elementów tablicy)
 16. [forEach](#foreach) - działa podobnie do pętli for, iteruje po wszystkich elementach tablicy
 17. [flat](#flat) - tworzy nową tablice ze wszystkich elementów, które są podtablicami
+18. [every](#every) - iteruje po wszystkich elementach tablicy, sprawdza warunek oraz jeżeli wszystkie warunki zostaną spełnione zwraca wartość true
 
 **Mutowanie tablic** - zmiana stanu tablicy
 
@@ -182,5 +183,11 @@ console.log(array)                // ["1", "2", "3", "4", "5"]
 
 ```
 
+## every 
+#### iteruje po wszystkich elementach tablicy, sprawdza warunek oraz jeżeli wszystkie warunki zostaną spełnione zwraca wartość true
+
+```javascript
+
+```
 
 
