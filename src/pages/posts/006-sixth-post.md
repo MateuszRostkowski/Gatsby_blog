@@ -107,6 +107,14 @@ console.log(array)                // ["1", "2", "3", "4", "5"]
 
 ```javascript
 
+array.includes(element, start)
+// szuka elementu w tablicy array zwraca prawde lub fałsz
+// zaczyna szukać od indexu start, domyślnie 0
+
+const array = [1, 2, 3, 4, 5];
+
+const bool1 = array.includes(4)    // zwraca true
+const bool2 = array.includes(4, 4) // zwraca false 
 ```
 
 
@@ -114,7 +122,14 @@ console.log(array)                // ["1", "2", "3", "4", "5"]
 #### wyszukuje pierwszy element kóry odpowiada argumentowi
 
 ```javascript
+array.indexOf(item, start)
+// szuka elementu w tablicy array zwraca jego index
+// jeżeli elementu nie ma w tablicy zwraca -1
+// zaczyna szukać od indexu start, domyślnie 0
+const array = [1, 2, 3, 4, 5];
 
+const i1 = indexOf(1); // zwraca 0
+const i2 = indexOf(1, 1) // zwraca -1
 ```
 
 
