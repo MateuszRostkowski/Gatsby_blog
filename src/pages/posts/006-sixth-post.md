@@ -134,7 +134,7 @@ const i2 = indexOf(1, 1) // zwraca -1
 
 
 ## concat
-#### łączy dwa elementy w jedną tablice
+#### łączy dwa elementy w jedną tablice (nie mutuje tablicy)
 
 ```javascript
 const array1 = [1, 2, 3, 4, 5];
@@ -145,9 +145,18 @@ const newArray = array1.concat(array2) // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 ## slice
-#### wydobywa fragment tablicy który znajduje się między in1 a in2
+#### wydobywa fragment tablicy który znajduje się między in1 a in2 (nie mutuje tablicy)
 
 ```javascript
+array.slice(start, end)
+// wycina elementy z tablicy od indeksu start do elementu przed indeksem end
+// start domyślnie 0, end domyślnie długość tablicy
+
+const ar1 = [1, 2, 3]
+ar1.slice(0, 1) // zwraca [1]
+ar1.slice(0, 2) // zwraca [1, 2]
+ar1.slice(2)    // zwraca [3]
+ar1.slice()     // zwraca [1, 2, 3]
 
 ```
 
