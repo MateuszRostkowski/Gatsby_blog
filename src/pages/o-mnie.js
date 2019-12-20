@@ -11,8 +11,8 @@ const AboutPage = () => (
     
     
     <p>
-Witajcie nazywam się Mateusz Rostkowski i jestem studentem studiów magisterskich na kierunku Mechanika i Budowa Maszyn. 
-Niestety kierunek ten nie pokrywa się z moimi zainteresowaniami. Więc od pewnego czasu zacząłem uczyć się programowania
+      Witajcie nazywam się Mateusz Rostkowski i jestem studentem studiów magisterskich na kierunku Mechanika i Budowa Maszyn. 
+      Aktualnie pracuje jako programista frontend.
     </p>
   </Layout>
 )
