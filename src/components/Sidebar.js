@@ -1,5 +1,5 @@
 import React from "react"
-import { Card, CardTitle, CardBody, CardText, Form, FormGroup, Input } from "reactstrap"
+import { Card, CardTitle, CardBody, CardText } from "reactstrap"
 import { graphql, StaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 
@@ -27,6 +27,9 @@ const Sidebar = ({ author, authorFluid }) => (
         </CardBody>
       </Card>
     )}
+    
+    {/*
+      Hiding subscribe section for now 20.12.2019
     <Card>
       <CardBody>
         <CardTitle className="text-center text-uppercase mb-3">
@@ -45,7 +48,7 @@ const Sidebar = ({ author, authorFluid }) => (
           </button>
         </Form>
       </CardBody>
-    </Card>
+    </Card> */}
     <Card>
       <CardBody>
         <CardTitle className="text-center text-uppercase">
