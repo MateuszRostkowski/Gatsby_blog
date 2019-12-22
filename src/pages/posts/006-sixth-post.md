@@ -151,6 +151,7 @@ const newArray = array1.concat(array2) // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 array.slice(start, end)
 // wycina elementy z tablicy od indeksu start do elementu przed indeksem end
 // start domyślnie 0, end domyślnie długość tablicy
+// nie mutuje tablicy
 
 const ar1 = [1, 2, 3]
 ar1.slice(0, 1) // zwraca [1]
@@ -168,6 +169,7 @@ ar1.slice()     // zwraca [1, 2, 3]
 array.splice(start, end)
 // wycina elementy z tablicy od indeksu start do elementu przed indeksem end
 // start domyślnie 0, end domyślnie długość tablicy
+// mutuje tablice
 
 const ar1 = [1, 2, 3]
 ar1.splice(0, 1) // zwraca [1] - tablica ar1 == [2, 3]
@@ -180,7 +182,26 @@ ar1.splice()     // zwraca [1, 2, 3] - tablica ar1 == [2, 3]
 #### tworzy nową tablicę zawierającą wyniki pętli wywołanej dla każdego elementu
 
 ```javascript
+array.map(fn(currentValue, index, array))
+// iteruje po elementatch tablicy
+// zwraca tablice o takiej samej długości
+// wykonuje daną czynność na każdym elemencie tablicy
+// nie mutuje tablicy
 
+const ar1 = [1, 2, 3]
+arr1.map((index) => {
+    return index * 2
+}) // zwraca [2, 4, 6]
+
+const ar1 = [4, 2, 5]
+arr2.map((number, index, array) => {
+    return `The number is: ${number}, the index is: ${index}, the array is: ${array}`
+}) 
+// zwraca [
+//    'The number is: 4, the index is: 1, the array is: 4, 2, 5',
+//    'The number is: 2, the index is: 2, the array is: 4, 2, 5',
+//    'The number is: 5, the index is: 3, the array is: 4, 2, 5',
+// ]
 ```
 
 ## find
