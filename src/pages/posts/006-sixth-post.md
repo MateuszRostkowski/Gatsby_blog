@@ -162,10 +162,18 @@ ar1.slice()     // zwraca [1, 2, 3]
 
 
 ## splice
-#### wycina fragment z tablicy który znajduje się między in1 a in2
+#### mutuje tablice - wycina fragment z tablicy który znajduje się między in1 a in2
 
 ```javascript
+array.splice(start, end)
+// wycina elementy z tablicy od indeksu start do elementu przed indeksem end
+// start domyślnie 0, end domyślnie długość tablicy
 
+const ar1 = [1, 2, 3]
+ar1.splice(0, 1) // zwraca [1] - tablica ar1 == [2, 3]
+ar1.splice(0, 2) // zwraca [1, 2] - tablica ar1 == [2, 3] 
+ar1.splice(2)    // zwraca [3] - tablica ar1 == [2, 3]
+ar1.splice()     // zwraca [1, 2, 3] - tablica ar1 == [2, 3]
 ```
 
 ## map
