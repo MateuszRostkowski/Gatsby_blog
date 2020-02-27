@@ -10,8 +10,6 @@ tags:
 - arrays
 ---
 
-## Table of contents
-
 ``` javascript
 // tworzenie klasy oraz nadawanie jej nazwy
 class Box {      

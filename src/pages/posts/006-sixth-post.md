@@ -10,7 +10,6 @@ tags:
 - arrays
 ---
 
-## Table of contents
 
 1. [pop](#pop) - usuwa ostatni element tablicy
 2. [push](#push) - "wpycha" element na koniec tablicy
